@@ -1,0 +1,29 @@
+{
+  "name": "jncinet/qihucms-invite",
+  "description": "qihucms invite.",
+  "keywords": [
+    "qihucms",
+    "invite"
+  ],
+  "homepage": "https://www.qihucms.com",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "zhangye",
+      "email": "y@qilephp.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Qihucms\\Invite\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Qihucms\\Invite\\InviteServiceProvider"
+      ]
+    }
+  }
+}
