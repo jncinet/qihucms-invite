@@ -1,8 +1,23 @@
-## 安装
+<h1 align="center">站内支付货币管理</h1>
 
+## 安装
 ```shell
 $ composer require jncinet/qihucms-invite
 ```
+
+## 开始
+### 数据迁移
+```shell
+$ php artisan migrate
+```
+
+### 发布资源
+```shell
+$ php artisan vendor:publish --provider="Qihucms\Invite\InviteServiceProvider"
+```
+
+## 后台菜单
++ 会员关系 `invite/invites`
 
 ## 使用
 
@@ -75,3 +90,15 @@ int $limit （选填）显示条数
 // 创建推荐关系
 Qihucms\Invite\Events\Invited
 ```
+
+# 数据库
+
+### 关系表：invites
+
+| Field             | Type      | Length    | AllowNull | Default   | Comment       |
+| :----             | :----     | :----     | :----     | :----     | :----         |
+| user_id           | bigint    |           |           |           | 会员ID         |
+| parent_id         | bigint    |           |           |           | 师父ID         |
+| grandfather_id    | bigint    |           |           |           | 太师ID         |
+| son_count         | int       |           |           | 0         | 徒弟数         |
+| grandson_count    | int       |           |           | 0         | 徒孙数         |

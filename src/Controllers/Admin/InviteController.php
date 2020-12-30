@@ -49,7 +49,7 @@ class InviteController extends Controller
                 $model = $this->user_info;
                 if ($model) {
                     $html = '<div>' . __('user.username') . '：' . $model->username . '</div>';
-                    $html .= '<div>' . __('user.mobile') . '：' . ($model->mobile ?: '未绑定') . '</div>';
+                    $html .= '<div>' . __('user.mobile') . '：' . ($model->mobile ?: '') . '</div>';
                     return $html;
                 }
             });
@@ -60,7 +60,7 @@ class InviteController extends Controller
                     $model = $this->parent_info;
                     if ($model) {
                         $html = '<div>' . __('user.username') . '：' . $model->username . '</div>';
-                        $html .= '<div>' . __('user.mobile') . '：' . ($model->mobile ?: '未绑定') . '</div>';
+                        $html .= '<div>' . __('user.mobile') . '：' . ($model->mobile ?: '') . '</div>';
                     }
                 }
                 return $html;
@@ -71,12 +71,12 @@ class InviteController extends Controller
                 if ($this->grandfather_id) {
                     $model = $this->grandfather_info;
                     $html = '<div>' . __('user.username') . '：' . $model->username . '</div>';
-                    $html .= '<div>' . __('user.mobile') . '：' . ($model->mobile ?: '未绑定') . '</div>';
+                    $html .= '<div>' . __('user.mobile') . '：' . ($model->mobile ?: '') . '</div>';
                 }
                 return $html;
             });
-        $grid->column('son_count', __('invite::invite.son_count'))->suffix('人')->sortable();
-        $grid->column('grandson_count', __('invite::invite.grandson_count'))->suffix('人')->sortable();
+        $grid->column('son_count', __('invite::invite.son_count'))->sortable();
+        $grid->column('grandson_count', __('invite::invite.grandson_count'))->sortable();
 
         return $grid;
     }

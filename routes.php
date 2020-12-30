@@ -5,13 +5,13 @@ use Illuminate\Routing\Router;
 // 接口
 Route::group([
     'namespace' => 'Qihucms\Invite\Controllers\Api',
-    'prefix' => 'invite',
+    'prefix' => config('qihu.invite_prefix', 'invite'),
     'middleware' => ['api'],
-    'as' => 'api.'
+    'as' => 'api.invite.'
 ], function (Router $router) {
-    $router->get('my', 'InviteController@my')->name('invite.my');
-    $router->get('td', 'InviteController@mySon')->name('invite.son');
-    $router->get('ts', 'InviteController@myGrandson')->name('invite.grandson');
+    $router->get('my', 'InviteController@my')->name('my');
+    $router->get('td', 'InviteController@mySon')->name('son');
+    $router->get('ts', 'InviteController@myGrandson')->name('grandson');
 });
 
 // 后台

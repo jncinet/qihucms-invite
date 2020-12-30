@@ -2,13 +2,13 @@
 
 namespace Qihucms\Invite\Controllers\Api;
 
-use App\Http\Controllers\Api\ApiController;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Qihucms\Invite\Invite;
 use Qihucms\Invite\Resources\PupilCollection;
 use Qihucms\Invite\Resources\Invite as InviteResource;
 
-class InviteController extends ApiController
+class InviteController extends Controller
 {
     protected $invite;
 
