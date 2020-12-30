@@ -1,4 +1,4 @@
-<h1 align="center">站内支付货币管理</h1>
+<h1 align="center">会员推广关系</h1>
 
 ## 安装
 ```shell
